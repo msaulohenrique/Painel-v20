@@ -62,6 +62,8 @@ yum install yum-utils -y
 yum-config-manager --enable remi-php56
 yum install httpd php php-mcrypt php-cli php-ssh2 php-gd php-curl php-mysql php-ldap php-zip php-fileinfo mariadb-server mariadb libssh2-devel libssh2 zip unzip wget gcc make -y 
 yum install nano -y 
+yum install -y php-pecl-ssh2
+pecl install ssh2-0.13
 service httpd reload
 if [[ "$port" == "80" ]]; then
 firewall-cmd --permanent --zone=public --add-service=http,
